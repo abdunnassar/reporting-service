@@ -5,3 +5,10 @@ We want to generate a report daily 3 times (say 10am, 1pm, 6pm) that shows how m
 We don't want all 6 instances generating and emailing the report. We want just one instance generating the report and it should be the same instance always.
 
 I proposed just running one new Spring Boot application called reporting_service. It will run on one designated server (the same server always) among the 6 servers running WebSphere 9. When the application gets moved to PCF, this reporting_service will be a single instance running there separate from the 6 instances supporting the insurance company's day-to-day business. The code here demonstrates how to bring up the reporting_service in a [Java 8, Spring 5, Spring Boot 2] environment, as a standalone Spring Boot application.
+
+Screenshot 1 of 2: What the DB tables used for local validations look like:
+![image](https://github.com/user-attachments/assets/47069236-67f4-4169-aa65-1ecef0d7b97f)
+
+Screenshot 2 of 2: Emails being received using MailHog.
+![image](https://github.com/user-attachments/assets/49ab6b4f-019c-4c72-a1ac-082c6605f454)
+
